@@ -164,6 +164,12 @@ nav {
   gap: 16px;
 }
 
+#nav-logo h1 {
+  @media (max-width: 715px) {
+    display: none;
+  }
+}
+
 #nav-carrito {
   position: absolute;
   right: 100px;
@@ -227,6 +233,10 @@ nav {
   background-color: #fff;
   padding: 0 54px;
   border-radius: 16px;
+
+  @media (max-width: 580px) {
+    width: 160px;
+  }
 }
 
 .fa.fa-window-close {
@@ -238,6 +248,10 @@ nav {
 #modal h4 {
   font-size: 2rem;
   text-align: center;
+
+  @media (max-width: 580px) {
+    font-size: 1.5rem;
+  }
 }
 
 .fa.fa-check-circle {
@@ -402,6 +416,50 @@ ul li {
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: 500;
+
+  @media (max-width: 1359px) {
+    margin-right: 20px;
+  }
+
+}
+
+.nav-item-container {
+  position: relative;
+  display: inline-block;
+}
+
+#menu-mobile {
+  display: none;
+  position: absolute;
+  top: 105%;
+  left: -56px;
+  z-index: 1000;
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  border-radius: 12px;
+  width: 115px;
+  padding: 10px;
+}
+
+.show-menu {
+  display: flex !important;
+  flex-direction: column;
+}
+
+.menu-mobile-a {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.menu-dropdown-nav {
+  display: none !important;
+  position: relative;
+  font-size: 2rem;
+  cursor: pointer;
+
+  @media (max-width:950px) {
+    display: block !important;
+  }
 }
 
 .nav-dashboard-subcontainer {
@@ -417,9 +475,14 @@ nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
+
+  @media (max-width:950px) {
+    display: none !important;
+  }
+
 }
 
-nav ul li a{
+nav ul li a {
   position: relative;
   cursor: pointer;
   padding: 5px 0;
@@ -462,8 +525,23 @@ nav ul li a{
   background-color: #fff;
 }
 
+#formulario-modificar-productos {
+  @media (max-width: 1035px) {
+    width: 450px;
+  }
+
+  @media (max-width: 470px) {
+    width: 250px;
+  }
+}
+
 #formulario-crear-productos {
   width: 100%;
+
+  @media (max-width: 560px) {
+    width: 50%;
+    padding: 50px;
+  }
 }
 
 #altaUsers-container {
@@ -476,6 +554,10 @@ nav ul li a{
 }
 
 #altaUsers-container button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   border-radius: 8px;
   align-self: center;
   padding: 8px 64px;
@@ -486,6 +568,10 @@ nav ul li a{
   color: #fff;
   border: none;
   font-size: 1.1rem;
+
+  @media (max-width: 560px) {
+    width: 200px;
+  }
 
   &:hover {
     opacity: 0.7;
@@ -501,6 +587,10 @@ nav ul li a{
 #altaUsers-container input {
   margin-bottom: 30px;
   padding: 5px 10px;
+
+  @media (max-width: 560px) {
+    width: 200px;
+  }
 }
 
 
@@ -515,6 +605,10 @@ nav ul li a{
   color: #fff;
   border: none;
   font-size: 1.1rem;
+
+  @media (max-width: 560px) {
+    width: 200px;
+  }
 
   &:hover {
     opacity: 0.7;
@@ -535,6 +629,10 @@ nav ul li a{
   border: 1px solid #ebebeb;
   font-size: 1.1rem;
   padding: 8px 24px;
+
+  @media (max-width: 560px) {
+    width: 200px;
+  }
 }
 
 .formulario-productos div select {
@@ -545,6 +643,10 @@ nav ul li a{
   border: 1px solid #ebebeb;
   font-size: 1.1rem;
   padding: 12px 22px;
+
+  @media (max-width: 560px) {
+    width: 200px;
+  }
 }
 
 .formulario-productos div select option {
@@ -558,18 +660,34 @@ nav ul li a{
   justify-content: space-around;
   height: 95vh;
   background-color: #0b3a66;
+
+  @media (max-width: 1100px) {
+    height: 150vh;
+    justify-content: center;
+    align-items: start;
+    padding: 0px 50px;
+  }
 }
 
-#sub-container-crear-productos{
+#sub-container-crear-productos {
   display: flex;
   justify-content: space-around;
   align-items: start;
   width: 100%;
+
+  @media (max-width: 1100px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 70px;
+  }
 }
 
 #main-crear-productos h1 {
   color: #ef7603;
   margin-top: 0;
+  text-align: center;
 }
 
 /* =========== MODIFICAR PRODUCTOS (dashboard) ============== */
@@ -592,11 +710,16 @@ nav ul li a{
   align-items: center;
   height: 95vh;
   background-color: #0b3a66;
+
+  @media (max-width: 450px) {
+    padding: 50px;
+  }
 }
 
 #main-modificar-productos h1 {
   margin-top: 70px;
   color: #ef7603;
+  text-align: center;
 }
 
 #input-id-producto {
@@ -617,17 +740,6 @@ nav ul li a{
   padding: 20px;
   color: #fff;
   cursor: pointer;
-}
-
-#contenedor-producto-encontrado {
-  display: none;
-  justify-content: start;
-  background-color: #fff;
-  border-radius: 8px;
-  margin-top: 30px;
-  width: 350px;
-  height: fit-content;
-  padding: 40px;
 }
 
 #contenedor-producto-encontrado span::first-letter {
@@ -668,119 +780,132 @@ nav ul li a{
 
 /* =========== ELIMINAR y CONSULTAR PRODUCTO ============== */
 
-#main-eliminar-producto, #main-consultar-producto {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    height: 96vh;
-    background-color: #0b3a66;/* Fondo azul de la vista Modificar */
-}
-
-#main-consultar-producto h1{
-  color: #ef7603;
+#main-eliminar-producto,
+#main-consultar-producto {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  height: 96vh;
+  background-color: #0b3a66;
+  /* Fondo azul de la vista Modificar */
 }
 
 #main-eliminar-producto h1 {
-    color: #ef7603;
+  color: #ef7603;
+  text-align: center;
+}
+
+#main-consultar-producto h1 {
+  color: #ef7603;
+  text-align: center;
 }
 
 /* Estilo del input y botón de búsqueda (igual que en Modificar) */
 .contenedor-formulario {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 #input-id-producto {
-    height: 30px;
-    text-align: center;
-    font-size: 1.7rem;
-    width: 80px;
-    padding: 20px;
-    margin-right: 40px;
-    border-radius: 8px;
-    border: none;
+  height: 30px;
+  text-align: center;
+  font-size: 1.7rem;
+  width: 80px;
+  padding: 20px;
+  margin-right: 40px;
+  border-radius: 8px;
+  border: none;
 }
 
 #buscar-producto {
-    border: none;
-    border-radius: 6px;
-    background-color: #00a339; /* Verde de búsqueda */
-    padding: 20px;
-    color: #fff;
-    cursor: pointer;
-    white-space: nowrap;
+  border: none;
+  border-radius: 6px;
+  background-color: #00a339;
+  /* Verde de búsqueda */
+  padding: 20px;
+  color: #fff;
+  cursor: pointer;
+  white-space: nowrap;
 }
 
 /* Contenedor del producto encontrado (Tarjeta Blanca) */
 #contenedor-producto-encontrado {
-    display: none;
-    flex-direction: column;
-    justify-content: start;
-    align-items: center;
-    background-color: #fff;
-    border-radius: 8px;
-    margin-top: 30px;
-    width: 350px;
-    height: fit-content;
-    padding: 40px;
+  display: none;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 8px;
+  margin-top: 30px;
+  width: 350px;
+  height: fit-content;
+  padding: 40px;
+
+  @media (max-width: 450px) {
+    width: 200px;
+    padding: 50px;
+  }
 }
 
 /* Estilo del botón de confirmación de ELIMINACIÓN */
 .btn-eliminar {
-    background-color: #dc3545; /* Rojo para eliminación */
-    cursor: pointer;
-    color: #fff;
-    border-radius: 8px;
-    padding: 10px 40px;
-    width: 275px;
-    white-space: nowrap;
-    border: none;
-    margin-top: 20px;
-    font-weight: 600;
+  background-color: #dc3545;
+  /* Rojo para eliminación */
+  cursor: pointer;
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 40px;
+  width: 275px;
+  white-space: nowrap;
+  border: none;
+  margin-top: 20px;
+  font-weight: 600;
 
-    /* Estilo del hover similar a boton-mostrar-modificacion */
-    transition: all 0.5s;
+  /* Estilo del hover similar a boton-mostrar-modificacion */
+  transition: all 0.5s;
 }
 
 .btn-eliminar-confirmar:hover {
-    opacity: 0.8;
+  opacity: 0.8;
 }
 
 /* Estilos de la imagen y texto dentro de la tarjeta */
 #contenedor-producto-encontrado img {
-    width: 200px;
-    height: 200px;
-    margin-bottom: 20px;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
 }
 
-.producto-nombre { /* H5 o P principal */
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #333;
+.producto-nombre {
+  /* H5 o P principal */
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
 }
 
-.producto-id, .producto-precio {
-    font-size: 1.2rem;
-    color: #555;
-    margin: 5px 0;
+.producto-id,
+.producto-precio {
+  font-size: 1.2rem;
+  color: #555;
+  margin: 5px 0;
 }
 
 /* Mensajes de Feedback */
 .mensaje {
-    padding: 10px;
-    border-radius: 4px;
-    font-weight: 600;
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: 600;
 }
 
 .error {
-    color: #dc3545;
+  color: #dc3545;
 }
 
 .exito {
-    color: #00a339;
+  color: #00a339;
 }
 
 /* ======= INDEX.EJS ========= */
@@ -795,6 +920,26 @@ nav ul li a{
   width: 70%;
   height: 600px;
   background-color: #fff;
+  border-radius: 14px;
+  flex-wrap: wrap;
+  gap: 30px;
+  overflow-y: scroll;
+
+  @media (max-width: 715px) {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    width: 80%;
+    height: 500px;
+    overflow-y: auto !important;
+    overflow-x: hidden;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  @media (max-width: 375px) {
+    width: 220px;
+  }
+
 }
 
 .index-ejs-productos {
@@ -819,8 +964,14 @@ nav ul li a{
 }
 
 #index-ejs-main-productos h2 {
-  color: #fff;
+  color: #ef7603;
+  font-size: 2rem;
+}
 
+#cerrar-sesion {
+  @media (max-width: 715px) {
+    display: none;
+  }
 }
 
 .index-ejs-producto {
@@ -835,6 +986,11 @@ nav ul li a{
   padding: 15px !important;
   gap: 14px;
   background-color: #fff;
+
+  @media (max-width: 715px) {
+    height: auto;
+    padding: 20px;
+  }
 
   &:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -864,13 +1020,6 @@ nav ul li a{
   text-align: center;
 }
 
-#index-ejs-productos-contenedor {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 20px;
-  gap: 30px;
-  overflow-y: scroll;
-}
 
 .index-ejs-producto p {
   margin: 0;
@@ -891,11 +1040,24 @@ nav ul li a{
   width: 20%;
   height: 600px;
   padding: 30px !important;
+
+  @media (max-width: 1406px) {
+    height: auto;
+    width: auto;
+  }
+
+  @media (max-width: 715px) {
+    width: 220px;
+  }
 }
 
 #index-ejs-main-productos div {
   padding: 0px 20px;
   gap: 30px;
+
+  @media (max-width: 715px) {
+    flex-direction: column;
+  }
 }
 
 #index-ejs-detalles-contenedor-producto img {
@@ -976,6 +1138,10 @@ nav ul li a{
   align-items: start;
   justify-content: center;
   gap: 10px;
+
+  @media (max-width: 445px) {
+    align-items: center;
+  }
 }
 
 #form-login label {
@@ -992,6 +1158,12 @@ nav ul li a{
   font-size: 1.3rem;
 }
 
+.contenedor-inputs-login {
+  @media (max-width: 445px) {
+    flex-direction: column;
+  }
+}
+
 #emailUser {
   padding: 5px 10px;
   border-radius: 6px;
@@ -999,6 +1171,10 @@ nav ul li a{
   width: 400px;
   height: 25px;
   font-size: 1.3rem;
+
+  @media (max-width: 445px) {
+    width: 200px;
+  }
 }
 
 #passwordUser {
@@ -1008,6 +1184,10 @@ nav ul li a{
   width: 400px;
   height: 25px;
   font-size: 1.3rem;
+
+  @media (max-width: 445px) {
+    width: 200px;
+  }
 }
 
 #buttonLogin {

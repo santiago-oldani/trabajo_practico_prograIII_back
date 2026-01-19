@@ -1,8 +1,7 @@
 <header>
     <nav>
         <div class="flex-row-center-center" id="nav-sub-navbar">
-            <p>Santiago Ezequiel Oldani</p>
-            <p>Cristian Damian Posada</p>
+
         </div>
         <div class="flex-row-center-center nav-dashboard-subcontainer">
             <div class="nav-dashboard" id="nav-logo">
@@ -17,12 +16,50 @@
                 <li><a href="/eliminar">Eliminar</a></li>
             </ul>
 
+            <div class="nav-item-container">
+                <i onclick="menuDropDown(event)" class="fa fa-bars menu-dropdown-nav" aria-hidden="true"></i>
+
+                <div id="menu-mobile">
+                    <p class="menu-mobile-a"><a href="/">Ver productos</a></p>
+                    <p class="menu-mobile-a"><a href="/consultar">Consultar</a></p>
+                    <p class="menu-mobile-a"><a href="/crear">Crear</a></p>
+                    <p class="menu-mobile-a"><a href="/modificar">Modificar</a></p>
+                    <p class="menu-mobile-a"><a href="/eliminar">Eliminar</a></p>
+                </div>
+            </div>
+
+
             <form action="/logout" id="logout" method="POST">
                 <button type="submit" id="button-logout">
-                    Cerrar sesión <i class="fa fa-sign-out" aria-hidden="true"></i>
+                    <span id="cerrar-sesion">Cerrar sesión</span>
+                    <i class="fa fa-sign-out" aria-hidden="true"></i>
                 </button>
             </form>
 
         </div>
     </nav>
+    <script>
+        const menuMobile = document.getElementById('menu-mobile');
+        const links = document.querySelectorAll('#menu-mobile a');
+
+        function menuDropDown(event) {
+            if (event) event.stopPropagation();
+            menuMobile.classList.toggle('show-menu');
+        }
+
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.stopPropagation();
+                menuMobile.classList.remove('show-menu');
+            });
+        });
+
+        window.addEventListener('click', (e) => {
+            const icono = document.querySelector('.menu-dropdown-nav');
+
+            if (!menuMobile.contains(e.target) && e.target !== icono) {
+                menuMobile.classList.remove('show-menu');
+            }
+        });
+    </script>
 </header>
