@@ -968,6 +968,12 @@ nav ul li a {
   font-size: 2rem;
 }
 
+#main-login h1{
+  @media (max-width: 715px) {
+    display: block;
+  }
+}
+
 #cerrar-sesion {
   @media (max-width: 715px) {
     display: none;
