@@ -21,7 +21,9 @@ import { loggerUrl } from "./src/api/middlewares/middlewares.js";
 import { productRoutes, userRoutes, viewRoutes } from "./src/api/routes/index.js";
 import { join, __dirname } from "./src/api/utils/index.js";
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://farmacy-tan.vercel.app/'
+}));
 app.use(express.json());
 app.use(loggerUrl);
 app.use(express.urlencoded({ extended: true }));

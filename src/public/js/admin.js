@@ -3,7 +3,7 @@ const contenedorDetalles = document.getElementById("index-ejs-detalles-contenedo
 
 async function cambiarBooleanoProducto(productId, booleano) {
   // 1. Ejecutar la actualización en el servidor
-  const response = await fetch(`http://localhost:3000/api/products/${productId}`, {
+  const response = await fetch(`https://farmacy-back.onrender.com/api/products/${productId}`, {
     method: 'PATCH',
     headers: {
       'Content-Type': 'application/json'
