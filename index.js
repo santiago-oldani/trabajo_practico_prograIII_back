@@ -22,7 +22,7 @@ import { productRoutes, userRoutes, viewRoutes } from "./src/api/routes/index.js
 import { join, __dirname } from "./src/api/utils/index.js";
 
 app.use(cors({
-    origin: 'https://farmacy-tan.vercel.app'
+  origin: 'https://farmacy-tan.vercel.app'
 }));
 app.use(express.json());
 app.use(loggerUrl);
@@ -37,12 +37,19 @@ app.use(express.urlencoded({
   extended: true
 }));
 
+app.set('trust proxy', 1); // Confía en el proxy de Vercel para manejar cookies seguras
+
 // middleware de session
 app.use(session({
-  secret: session_key, // firma las cookies
-  resave: false, // evita guardar la sesion si no hubo cambios
-  saveUninitialized: true // no guarda sesiones vacias
-}))
+  secret: session_key,
+  resave: true, // Forzamos a que se guarde la sesión incluso si no hay cambios
+  saveUninitialized: false,
+  cookie: {
+    secure: true, // Vercel siempre usa HTTPS
+    sameSite: 'lax',
+    maxAge: 1000 * 60 * 60 * 24 // 24 horas
+  }
+}));
 
 // configuracion de ejs
 app.set("view engine", "ejs");
