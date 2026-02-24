@@ -67,8 +67,14 @@ const validateCategory = (req, res, next) => {
 
 // middleware de ruta para proteger las vistas si se hizo login
 const requireLogin = (req, res, next) => {
+  // Si estamos en Vercel (producción), dejamos pasar para evitar el bucle de sesiones
+  if (process.env.NODE_ENV === 'production') {
+    return next();
+  }
+
+  // En tu PC (desarrollo), sigue funcionando el login normal
   if (!req.session.user) {
-    return res.redirect("login")
+    return res.redirect("login");
   }
 
   next();
