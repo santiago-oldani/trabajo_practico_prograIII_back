@@ -9,7 +9,8 @@ const __filename = fileURLToPath(import.meta.url);
 
 // Obtener el directorio del archivo actual
 // Aca apunto a la raiz de mi proyecto retrocediendo 3 niveles (carpetas)
-const __dirname = join(dirname(__filename), "../../../");
+/* const __dirname = join(dirname(__filename), "../../../"); */ /* ESTO ES PARA DESARROLLO */
+const __dirname = process.cwd();
 export {
   __dirname,
   join
