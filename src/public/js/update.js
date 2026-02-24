@@ -5,7 +5,7 @@ const modal = document.getElementById("modal-container");
 
 async function buscarProductoPorId() {
   try {
-    let respuesta = await fetch(`https://farmacy-back.onrender.com/api/products/${idProducto.value}`);
+    let respuesta = await fetch(`https://trabajo-practico-progra-iii-back.vercel.app/api/products/${idProducto.value}`);
     let data = await respuesta.json();
     let producto = data.payload[0];
 
@@ -70,7 +70,7 @@ async function verModificacionProducto(producto) {
     let data = Object.fromEntries(formData.entries());
 
     try {
-      let response = await fetch(`https://farmacy-back.onrender.com/api/products/${idProducto.value}`, {
+      let response = await fetch(`https://trabajo-practico-progra-iii-back.vercel.app/api/products/${idProducto.value}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"

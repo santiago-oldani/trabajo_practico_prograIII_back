@@ -7,7 +7,7 @@ formularioCrearProducto.addEventListener("submit", async function (e) {
   let data = Object.fromEntries(formData.entries());
   console.log(data);
   try {
-    let response = await fetch("https://farmacy-back.onrender.com/api/products", {
+    let response = await fetch("https://trabajo-practico-progra-iii-back.vercel.app/api/products", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {

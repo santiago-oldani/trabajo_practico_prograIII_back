@@ -1,6 +1,6 @@
 let getProduct_form = document.getElementById("getProduct-form");
 let listaProductos = document.getElementById("lista-productos");
-let url = "https://farmacy-back.onrender.com/api/products";
+let url = "https://trabajo-practico-progra-iii-back.vercel.app/api/products";
 
 
 getProduct_form.addEventListener("submit", async (event) => {
@@ -25,7 +25,7 @@ getProduct_form.addEventListener("submit", async (event) => {
 
   try {
     console.log(`Haciendo peticion GET a la url: ${url}/${idProd}`)
-    let respuesta = await fetch(`https://farmacy-back.onrender.com/api/products/${idProd}`);
+    let respuesta = await fetch(`https://trabajo-practico-progra-iii-back.vercel.app/api/products/${idProd}`);
     console.log(respuesta);
 
     let datos = await respuesta.json();

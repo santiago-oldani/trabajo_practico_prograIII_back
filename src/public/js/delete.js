@@ -1,6 +1,6 @@
 const inputIdProducto = document.getElementById("input-id-producto");
 const contenedorProductoEncontrado = document.getElementById("contenedor-producto-encontrado");
-const BASE_URL = "https://farmacy-back.onrender.com/api/products";
+const BASE_URL = "https://trabajo-practico-progra-iii-back.vercel.app/api/products";
 
 // Buscar Producto por ID (Llamada desde el onclick)
 async function buscarProductoPorId() {

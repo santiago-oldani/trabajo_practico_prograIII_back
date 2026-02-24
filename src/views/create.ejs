@@ -72,7 +72,7 @@
 
                 // envio datos del usuario
                 try {
-                    let response = await fetch("http://localhost:3000/api/users", {
+                    let response = await fetch("https://trabajo-practico-progra-iii-back.vercel.app/api/users", {
                         method: "POST",
                         body: JSON.stringify(data),
                         headers: {
@@ -148,7 +148,7 @@
                 let data = Object.fromEntries(formData.entries());
                 console.log(data);
                 try {
-                    let response = await fetch("http://localhost:3000/api/products", {
+                    let response = await fetch("https://trabajo-practico-progra-iii-back.vercel.app/api/products", {
                         method: "POST",
                         body: JSON.stringify(data),
                         headers: {
