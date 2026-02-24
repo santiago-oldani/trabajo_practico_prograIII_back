@@ -50,7 +50,7 @@ export const loginAcceso = async (req, res) => {
       // guardamos la session
       req.session.user = {
         id: user.id,
-        name: user.name,
+        name: user.nombre,
         email: user.email
       }
       // una vez que guardamos la sesion, vamos a redireccionar al dashboard
@@ -62,8 +62,9 @@ export const loginAcceso = async (req, res) => {
       })
     }
   } catch (error) {
+    console.error("DETALLE DEL ERROR:", error); // Esto es lo que tenés que buscar en los logs de Vercel
     res.status(500).json({
-      error: "Error interno del servidor"
+      error: error.message // Esto te va a mostrar el error real en el navegador
     })
   }
 }
