@@ -53,7 +53,10 @@ app.use("/api/products", productRoutes);
 app.use("/", viewRoutes);
 app.use("/api/users", userRoutes);
 
-app.listen(PORT, () => {
-  console.log(`Servidor corriendo en el puerto ${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`Servidor corriendo en el puerto ${PORT}`);
+  });
+}
 
+export default app;
