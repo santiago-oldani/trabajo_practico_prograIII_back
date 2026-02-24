@@ -22,7 +22,13 @@ import { productRoutes, userRoutes, viewRoutes } from "./src/api/routes/index.js
 import { join, __dirname } from "./src/api/utils/index.js";
 
 app.use(cors({
-  origin: ['https://farmacy-tan.vercel.app', 'http://127.0.0.1:5500']
+  origin: [
+    'https://farmacy-tan.vercel.app', 
+    'http://127.0.0.1:5500', 
+    'http://localhost:5500'
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 app.use(express.json());
 app.use(loggerUrl);
