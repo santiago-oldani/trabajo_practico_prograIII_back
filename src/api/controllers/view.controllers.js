@@ -4,9 +4,6 @@ import bcrypt from 'bcrypt';
 
 
 export const vistaProductos = async (req, res) => {
-  if (!req.session.user) {
-    return res.redirect("login")
-  }
   try {
     const [rows] = await ProductModel.selectAllProducts();
     res.render("index", {
